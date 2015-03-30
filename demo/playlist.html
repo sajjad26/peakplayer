@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Peak Player - Free HTML5 Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Peak Player is a Free HTML5 Music Player With Playlist Functionality And is Cross Browser Compatible , it lets You Play MP3, OGG, WAV, AAC, Vorbis and Radio Streams as well." />
+        <meta name="keywords" content="html5 audio, free music player, free mp3 player, javascript music player, html5 music player, jquery music player" />
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/skin/playlist_player.css">
+        <script src="js/jquery.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="demo" class="">
+                <div id="peakPlayer">
+                    <div id="playerDisplay">
+                        <div id="songInfo">
+                            <div class="songNameContainer">
+                                <p class="songName">Song Name</p>
+                            </div>
+                            <div class="songRuntimeInfo">
+                                <p class="songTime" id="songTime">
+                                <span id="timeElapsed" class="timeElapsed">00:23</span>
+                                /
+                                <span id="totalTime" class="totalTime">03:43</span>
+                                </p>
+                                <div id="secondaryControls">
+                                    <button class="btn btn-default btn-sm" id="random"><i class="glyphicon glyphicon-random"></i></button>
+                                    <button class="btn btn-default btn-sm" id="loop"><i class="glyphicon glyphicon-repeat"></i></button>
+                                    <button class="btn btn-default btn-sm" id="volume"><i class="glyphicon glyphicon-volume-up"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playerInfo">
+                        <div class="progressBar">
+                            <div id="loadBar" class="loadBar" style="width: 20%;">
+                                <div id="progressBar" class="currentProgress" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mainControls">
+                        <button id="previousSongButton" class="btn btn-default">
+                        <i class="glyphicon glyphicon-step-backward"></i>
+                        </button>
+                        <button id="playSongButton" class="btn btn-default">
+                        <i class="glyphicon glyphicon-play"></i>
+                        </button>
+                        <button id="nextSongButton" class="btn btn-default">
+                        <i class="glyphicon glyphicon-step-forward"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/soundmanager/soundmanager2-jsmin.js"></script>
+        <script src="js/peakPlayer.js"></script>
+        <script src="js/peakPlayerPlaylist.js"></script>
+    </body>
+</html>
