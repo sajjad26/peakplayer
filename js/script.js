@@ -3,16 +3,16 @@
 
 		var songsArray = [
 			{
+				name: "Young Ac All I Be Doing",
+				url: "http://xsongs.pk/downloads/young-ac-all-i-be-doing/v073887023_2119410002.mp3",
+			},
+			{
 				name: "Please Dont Stop The Music",
 				url: "http://a.tumblr.com/tumblr_lny5arjxY31qgzinjo1.mp3",
 			},
 			{
 				name: "Hands up in the air",
 				url: "http://tegos.ru/new/mp3_full/Timbaland_ft_Ne-Yo_-_Hands_In_The_Air.mp3"
-			},
-			{
-				name: "Bonfire - Knife Party",
-				url: "http://www.hulkshare.com/ap-n0eckf30xybk.mp3",
 			},
 		];
 
@@ -74,10 +74,45 @@
 			}
 		});
 
+		var volumeDown = false;
+		var volumeWidth = $("#volumeBar").width();
+		var knobWidth = $("#volumeBar").find("#volumeKnob").width();
+		$("#volumeBar").on({
+			click: function(e){
+				var width = e.pageX - $(this).offset().left;
+				$(this).find("#volumeSelected").css({
+					width: width + "px"
+				});
+			},
+			mousedown: function(e){
+				volumeDown = true;
+				console.log("down");
+			},
+			mouseup: function(e){
+				volumeDown = false;
+				console.log("up");
+			},
+			mousemove: function(e){
+				if(volumeDown){
+					var width = e.pageX - $(this).offset().left;
+					if(width > ( volumeWidth - (knobWidth / 2)) || width < (knobWidth / 2)) return false;
+					$(this).find("#volumeSelected").css({
+						width: width + "px"
+					});
+					if(myPeakPlayer.song.smObject){
+						myPeakPlayer.song.smObject.setVolume(width/2);
+					}
+				}
+			},
+			mouseleave: function(e){
+				// volumeDown = false;
+			}
+		});
+
 		$("#loadBar").on({
 			click: function(e){
 				e.preventDefault();
-				var seekToPosition = e.pageX - $(this).position().left;
+				var seekToPosition = e.pageX - $(this).parents(".main-player-container").position().left;
 				var seekWidth = $(this).width();
 				myPeakPlayer.seekToPosition(seekToPosition, seekWidth);
 			}
@@ -85,7 +120,9 @@
 
 		myPeakPlayer.onPlay = function(currentSong){
 			$("#playSongButton i").addClass('glyphicon-pause');
-			$(".songName").text(currentSong.name);
+			$("#peakPlayer .song-name").text(currentSong.name);
+			$("#playlist").find("ul").find("li.active").removeClass('active');
+			$("#"+currentSong.id).addClass('active');
 		};
 
 		myPeakPlayer.onPause = function(currentSong){
@@ -105,6 +142,18 @@
 		myPeakPlayer.whileLoading = function(songObject, percentageLoaded){
 			$("#loadBar").css("width", percentageLoaded + "%");
 		};
+
+		// create playlist
+		var playlist = myPeakPlayer.getHTMLPlaylist();
+		$(playlist).find("li").click(function(event) {
+			$(this).parents("ul").find("li.active").removeClass('active');
+			$(this).addClass('active');
+			var id = $(this).attr("id");
+			myPeakPlayer.playTrack(id.match(/\d+$/)[0]);
+		});
+		$("#peakPlayer #playlist").html(playlist);
+
+
 		
 	});
 })();

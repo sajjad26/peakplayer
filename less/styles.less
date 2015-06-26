@@ -1,0 +1,162 @@
+@import "mixins.less";
+@import "variables.less";
+
+@totalHeight: 104px;
+@bigHeight: 70px;
+@smallHeight: 34px;
+@volumeHeight: 15px;
+@volumeWidth: 100%;
+
+#volumeContainer{
+    margin-bottom: 20px;
+    #volumeBar{
+        width: @volumeWidth;
+        height: @volumeHeight;
+        background-color: #ccc;
+        cursor: pointer;
+        #volumeSelected{
+            height: @volumeHeight;
+            width: 100px;
+            background-color: green;
+            position: relative;
+            #volumeKnob{
+                position: absolute;
+                width: @volumeHeight;
+                height: @volumeHeight + @volumeHeight / 2;
+                right: -(@volumeHeight/2);
+                opacity: 0.8;
+                bottom: -(@volumeHeight / 4);
+                background-color: red;
+                .border-radius(3px);
+            }
+        }
+    }
+}
+
+.peakplayer{
+    width: 302px;
+    font-size: 14px;
+    color: #444;
+    .player-container{
+        overflow: hidden;
+        display: table;
+        .border-radiuses(4px, 0, 0, 4px);
+        background-color: lighten(@primary, 10%);
+        border: solid 1px darken(@primary, 30%);
+        .main-controls-container{
+            float: left;
+            width: 80px;
+            border-right: solid 1px darken(@primary, 30%);
+            height: @totalHeight;
+            .play-button-container{
+                text-align: center;
+                padding: 2px 4px;
+                height: @bigHeight;
+                .pp-play-button{
+                    font-size: 40px;
+                    width: 60px;
+                    height: 60px;
+                    display: inline-block;
+                    background-color: darken(@primary, 40%);
+                    .border-radius(50%);
+                    i{
+                        position: relative;
+                        top: 5px;
+                        left: 3px;
+                    }
+                }
+            }
+            .next-previous-buttons-container{
+                padding-top: 2px;
+                border-top: solid 1px darken(@primary, 30%);
+                text-align: center;
+                height: @smallHeight;
+            }
+        }
+        .main-player-container{
+            float: right;
+            width: 220px;
+            position: relative;
+            height: @totalHeight;
+            background-color: lighten(@secondary, 20%);
+            .song-info-container{
+                padding: 2px 4px;
+                font-size: 13px;
+                font-family: Tahoma;
+                color: darken(@primary, 20%);
+                height: @bigHeight;
+            }
+            .song-progress-container{
+                position: relative;
+                border-top: solid 1px darken(@primary, 30%);
+                width: 100%;
+                height: @smallHeight;
+                background-color: #ccc;
+                bottom: 0px;
+                .progress-bar{
+                    width: 100%;
+                    height: 100%;
+                    background-color: darken(@secondary, 10%);
+                    position: relative;
+                    z-index: 10;
+                    .load-bar{
+                        position: relative;
+                        background-color: darken(@secondary, 20%);
+                        z-index: 20;
+                        height: 100%;
+                        width: 0%;
+                        transition: width 0.8s;
+                    }
+                    .current-progress{
+                        position: relative;
+                        background-color: darken(@secondary, 30%);   
+                        z-index: 30;
+                        height: 100%;
+                        width: 0%;
+                        transition: width 0.8s;
+                    }
+                }
+            }
+        }
+    }
+    .pp-btn{
+        color: darken(@primary, 20%);
+        outline: none;
+        display: inline-block;
+        background-color: darken(@primary, 40%);
+        font-size: 18px;
+        width: 28px;
+        height: 28px;
+        .border-radius(50%);
+        i{
+            position: relative;
+            left: 0px;
+            top: 4px;
+        }
+        &:hover{
+            color: darken(@primary, 30%);
+        }
+    }
+    .playlist-container{
+        border: solid 1px darken(@primary, 30%);
+        border-top: 0;
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+                padding: 4px;
+                border-bottom: solid 1px darken(@primary, 10%);
+                background-color: @primary;
+                font-size: 13px;
+                font-family: tahoma;
+                cursor: pointer;
+                color: darken(@primary, 30%);
+                &:hover, &.active{
+                    background-color: darken(@primary, 10%);
+                    color: darken(@primary, 35%);
+                }
+            }
+        }
+    }
+}

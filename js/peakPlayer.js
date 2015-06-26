@@ -230,7 +230,17 @@
 		getPlaylist: function(){
 			return this.songs;
 		},
-
+		getHTMLPlaylist: function(){
+			var playlist = document.createElement("ul");
+			var loop = this.songs.length;
+			for(var i = 0; i < loop; i++){				
+				var song = document.createElement("li");
+				song.innerHTML = this.songs[i].name;
+				song.id = this.songs[i].id;
+				playlist.appendChild(song);
+			}
+			return playlist;
+		},
 		getCurrentSong: function(){
 			return this.song;
 		},

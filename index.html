@@ -8,7 +8,7 @@
         <meta name="description" content="Peak Player is a Free HTML5 Music Player With Playlist Functionality And is Cross Browser Compatible , it lets You Play MP3, OGG, WAV, AAC, Vorbis and Radio Streams as well." />
         <meta name="keywords" content="html5 audio, free music player, free mp3 player, javascript music player, html5 music player, jquery music player" />
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/skin/peakPlayer.css">
+        <link rel="stylesheet" href="/skin/peakplayer.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     </head>
@@ -35,44 +35,42 @@
                 </div>
             </div>
             <div id="demo" class="">
-                <div id="peakPlayer">
-                    <div id="playerDisplay">
-                        <div id="songInfo">
-                            <div class="songNameContainer">
-                                <p class="songName">Song Name</p>
+                <div class="peakplayer" id="peakPlayer">
+                    <div class="volume-container" id="volumeContainer">
+                        <div id="volumeBar">
+                            <div id="volumeSelected">
+                                <div id="volumeKnob"></div>
                             </div>
-                            <div class="songRuntimeInfo">
-                                <p class="songTime" id="songTime">
-                                <span id="timeElapsed" class="timeElapsed">00:23</span>
-                                /
-                                <span id="totalTime" class="totalTime">03:43</span>
-                                </p>
-                                <div id="secondaryControls">
-                                    <button class="btn btn-default btn-sm" id="random"><i class="glyphicon glyphicon-random"></i></button>
-                                    <button class="btn btn-default btn-sm" id="loop"><i class="glyphicon glyphicon-repeat"></i></button>
-                                    <button class="btn btn-default btn-sm" id="volume"><i class="glyphicon glyphicon-volume-up"></i></button>
+                        </div>
+                    </div>
+                    <div class="player-container">
+                        <div class="main-controls-container">
+                            <div class="play-button-container">
+                                <a href="#" class="pp-btn pp-play-button" id="playSongButton"><i class="glyphicon glyphicon-play"></i></a>
+                            </div>
+                            <div class="next-previous-buttons-container">
+                                <a href="#" id="previousSongButton" class="pp-btn pp-previous-btn">
+                                    <i class="glyphicon glyphicon-step-backward"></i>
+                                </a>
+                                <a href="#" id="nextSongButton" class="pp-btn pp-next-btn">
+                                    <i class="glyphicon glyphicon-step-forward"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="main-player-container">
+                            <div class="song-info-container">
+                                <span class="song-name">Song name</span>
+                            </div>
+                            <div class="song-progress-container">
+                                <div class="progress-bar">
+                                    <div id="loadBar" class="load-bar" style="width: 70%;">
+                                        <div id="progressBar" class="current-progress" style="width: 40%;"></div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>        
                         </div>
                     </div>
-                    <div class="playerInfo">
-                        <div class="progressBar">
-                            <div id="loadBar" class="loadBar" style="width: 20%;">
-                                <div id="progressBar" class="currentProgress" style="width: 10%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="mainControls">
-                        <button id="previousSongButton" class="btn btn-default">
-                        <i class="glyphicon glyphicon-step-backward"></i>
-                        </button>
-                        <button id="playSongButton" class="btn btn-default">
-                        <i class="glyphicon glyphicon-play"></i>
-                        </button>
-                        <button id="nextSongButton" class="btn btn-default">
-                        <i class="glyphicon glyphicon-step-forward"></i>
-                        </button>
-                    </div>
+                    <div id="playlist" class="playlist-container"></div>
                 </div>
             </div>
         </div>
