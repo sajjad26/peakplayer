@@ -19,6 +19,7 @@
 		var options = {
 			random: false,
 			loop: false,
+			flashUrl: "/node_modules/soundmanager2/swf/"
 		};
 		//console.log(peakPlayer);
 		var myPeakPlayer = new peakPlayer(options);
