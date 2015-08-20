@@ -46,7 +46,7 @@
 		setSoundManager : function(sm){
 			if(sm){
 				sm.url = this.options.flashUrl;
-				sm.preferFlash = true;
+				sm.preferFlash = false;
 				sm.flashVersion = 9;
 				sm.debugMode = false;
 				sm.flashPollingInterval = 1000;

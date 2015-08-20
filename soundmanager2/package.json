@@ -1,0 +1,42 @@
+{
+  "name": "soundmanager2",
+  "version": "2.97.20150601-a",
+  "description": "A JavaScript Sound API supporting MP3, MPEG4 and HTML5 audio + RTMP, providing reliable cross-browser/platform audio control in as little as 12 KB.",
+  "main": "script/soundmanager2.js",
+  "directories": {
+    "lib": "./script"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottschiller/SoundManager2/"
+  },
+  "keywords": [
+    "browser",
+    "audio",
+    "sound",
+    "mp3",
+    "mpeg4",
+    "html5"
+  ],
+  "author": {
+    "name": "Scott Schiller",
+    "email": "spam@schillmania.com",
+    "url": "http://schillmania.com/"
+  },
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/scottschiller/SoundManager2/issues/"
+  },
+  "homepage": "http://www.schillmania.com/projects/soundmanager2/",
+  "readme": "== SoundManager 2: JavaScript Sound for the Web\r\n\r\nBy wrapping and extending HTML5 and Flash Audio APIs, SoundManager 2 brings reliable cross-platform audio to JavaScript. \r\n\r\n== HTML5 Audio() Support\r\n\r\n    * 100% Flash-free MP3 + MP4/AAC where supported\r\n    * Compatible with Apple iPad 3.2, iPhone/iOS 4 and newer\r\n    * Fallback to Flash for MP3/MP4 support, as needed\r\n    * SM2 API is transparent; HTML5/flash switching handled internally\r\n    * HTML5 API support approximates Flash 8 API features\r\n    * Some other formats (WAV/OGG) supported via HTML5, depending on browser\r\n    * See \"useHTML5Audio\" property for implementation details\r\n\r\n== Basic API Features (Flash 8)\r\n\r\n    * Load, stop, play, pause, mute, seek, pan and volume control of sounds from Javascript\r\n    * Events: onload, whileloading, whileplaying, onfinish and more\r\n    * ID3V1 and ID3V2 tag support for MP3s (title, artist, genre etc.)\r\n\r\n== Shiny Flash 9 Features\r\n\r\n    * RTMP / Flash Media Server streaming support\r\n    * MPEG-4 (AAC, HE-AAC, H.264) audio support\r\n    * \"MultiShot\" play (layered/chorusing effects)\r\n    * Waveform/frequency spectrum data\r\n    * Peak (L/R channel volume) data\r\n    * Audio buffering state/event handling\r\n\r\n== General Tech Stuff\r\n\r\n    * Full API Documentation with examples and notes\r\n    * console.log()-style debug output and troubleshooting tools\r\n    * Community-based discussion/support\r\n\r\n== As Heard On The Internets\r\n\r\nA few nifty sites that have implemented SM2 for driving audio:\r\n\r\n    * Tidal\r\n    * Beats\r\n    * Songza\r\n    * Earbits\r\n    * freesound.org\r\n    * last.fm\r\n    * 8tracks\r\n    * Discogs\r\n    * The Hype Machine\r\n    * nyan.cat\r\n\r\n== Project home, documentation, live demos etc.:\r\n\r\nhttp://www.schillmania.com/projects/soundmanager2/\r\n\r\n== Compiling JS builds (-nodebug, -jsmin) and Flash components, AS2/AS3 to SWF\r\n\r\nAn Ant build file defines the tasks for compiling JS and SWF components, useful if you make changes to the SM2 source and want to recompile.\r\nGoogle's Closure Compiler is used for the JS. AS2 compilation is done by MTASC, and AS3 is handled by Adobe's Open Source Flex SDK (mxmlc) compiler.\r\nRefer to the build.xml file for compiler downloads and path definitions.\r\n\r\n== Versioning / Development Notes\r\n\r\nReleases are versioned by date, e.g., V2.97a.20110424 and are tagged as such.*\r\nThe latest official release is always on trunk/master.\r\nPost-release development builds may be available on the appropriate +DEV branch, eg., V2.97a.20110801+DEV\r\n\r\n== Forks and Pull Requests\r\n\r\nFirstly, thank you for wanting to contribute! Bug fixes and tweaks are welcomed, particularly if they follow the general coding style of the project.\r\nIf making a pull request, use the project's current +DEV development branch as the merge target instead of \"master\", if possible (please and thank-you.)\r\n\r\n* SoundManager 2 has been at \"version\" 2.97 for a long time, because 2.97 was arguably the best llama-ass-whipping version of WinAmp. (WinAmp 3 was not as good, and WinAmp 5 was \"the best of 2 and 3 combined.\") This MP3 player was my favourite Windows app during the 90's, and is missed as there's nothing quite like it on OS X where I spend most of my time these days.\r\n",
+  "readmeFilename": "README.rdoc",
+  "_id": "soundmanager2@2.97.20150601-a",
+  "dist": {
+    "shasum": "a5ee0436014dbbe7e39ef785d77b163d29019a61"
+  },
+  "_resolved": "git://github.com/scottschiller/SoundManager2#e6394dafc3cdc99596a18a6625d32bd5831345ab",
+  "_from": "soundmanager2@git://github.com/scottschiller/SoundManager2"
+}

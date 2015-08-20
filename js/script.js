@@ -1,7 +1,7 @@
 (function(){
 	$(document).ready(function(){
-
-		var songsArray = [
+		console.log(window.songsArray);
+		var songsArray = window.songsArray || [
 			{
 				name: "Young Ac All I Be Doing",
 				url: "http://xsongs.pk/downloads/young-ac-all-i-be-doing/v073887023_2119410002.mp3",

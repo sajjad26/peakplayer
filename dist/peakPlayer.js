@@ -46,7 +46,7 @@
 		setSoundManager : function(sm){
 			if(sm){
 				sm.url = this.options.flashUrl;
-				sm.preferFlash = true;
+				sm.preferFlash = false;
 				sm.flashVersion = 9;
 				sm.debugMode = false;
 				sm.flashPollingInterval = 1000;
@@ -337,8 +337,8 @@
 
 })();;(function(){
 	$(document).ready(function(){
-
-		var songsArray = [
+		console.log(window.songsArray);
+		var songsArray = window.songsArray || [
 			{
 				name: "Young Ac All I Be Doing",
 				url: "http://xsongs.pk/downloads/young-ac-all-i-be-doing/v073887023_2119410002.mp3",
