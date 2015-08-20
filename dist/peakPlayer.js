@@ -337,7 +337,6 @@
 
 })();;(function(){
 	$(document).ready(function(){
-		console.log(window.songsArray);
 		var songsArray = window.songsArray || [
 			{
 				name: "Young Ac All I Be Doing",
